@@ -41,8 +41,3 @@ output_path = os.path.join(".", "analysis", "Analysis.txt")
 
 with open(output_path, 'w') as f:
     f.write(report)
-<<<<<<< HEAD
-
-# print(header)
-=======
->>>>>>> 073ab7cf70ecd12995cd9e68ee6d5a418a770b67

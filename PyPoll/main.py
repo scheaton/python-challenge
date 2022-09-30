@@ -38,5 +38,3 @@ Total Votes: %d\n-------------------------\n" % total_vote_count)
         % (candidates[i], votes[i]*100/total_vote_count, votes[i]))
     f.write("-------------------------\nWinner: %s\n\
 -------------------------\n'''" % winner)
-
-# print(header)
