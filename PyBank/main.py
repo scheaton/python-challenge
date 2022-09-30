@@ -5,7 +5,7 @@ csvpath = os.path.join(".", "Resources", "budget_data.csv")
 
 with open(csvpath, 'r') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
-    next(csvreader)         # go past header
+    header = next(csvreader)# save and go past header
 
     row = next(csvreader)   # Treat month differently
     months = 1              # because some of our stats
@@ -41,3 +41,5 @@ output_path = os.path.join(".", "analysis", "Analysis.txt")
 
 with open(output_path, 'w') as f:
     f.write(report)
+
+# print(header)

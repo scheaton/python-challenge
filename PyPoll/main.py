@@ -9,7 +9,7 @@ csvpath = os.path.join(".", "Resources", "election_data.csv")
 
 with open(csvpath, 'r') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
-    next(csvreader)         # go past header
+    header = next(csvreader)    # save and go past header
     for row in csvreader:
         if row[2] not in candidates :
             candidates.append(row[2])
@@ -38,3 +38,5 @@ Total Votes: %d\n-------------------------\n" % total_vote_count)
         % (candidates[i], votes[i]*100/total_vote_count, votes[i]))
     f.write("-------------------------\nWinner: %s\n\
 -------------------------\n'''" % winner)
+
+# print(header)
