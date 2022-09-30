@@ -7,7 +7,7 @@ with open(csvpath, 'r') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
     next(csvreader)         # go past header
 
-    row = next(csvreader)   # Treat month differently
+    row = next(csvreader)   # Treat first month differently
     months = 1              # because some of our stats
     total_pl = int(row[1])  # are about changes.
     total_pl_change = 0
@@ -18,7 +18,7 @@ with open(csvpath, 'r') as csvfile:
     for row in csvreader:
         months += 1
         total_pl += int(row[1])
-        pl_change = int(row[1]) - prev_pl   # pl = Profit/Losses
+        pl_change = int(row[1]) - prev_pl
         total_pl_change += pl_change
         if pl_change > max_increase :
             max_increase = pl_change
