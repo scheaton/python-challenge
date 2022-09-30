@@ -10,7 +10,7 @@ csvpath = os.path.join(".", "Resources", "budget_data.csv")
 
 with open(csvpath, 'r') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
-    next(csvreader)         #go past header
+    next(csvreader)         # go past header
     for row in csvreader:
         months += 1
         pl = int(row[1])    # pl = Profit/Losses
@@ -31,7 +31,7 @@ max_increase, max_decrease_date, max_decrease))
 
 print(report)
 
-output_path = os.path.join(".", "Analysis", "Analysis.txt")
+output_path = os.path.join(".", "analysis", "Analysis.txt")
 
 with open(output_path, 'w') as f:
     f.write(report)
